@@ -140,14 +140,18 @@
      word-wrap: break-word;
  }
  div.conv-form-wrapper  div#messages div.message.to {
-     background: linear-gradient(to right, #388eff 29%, #70aeff 81%);
-     color: #fff;
+     background-color: #03c8ff;
+     font-family:'VT323', monospace;
+     color: #000000;
      float: left;
+     font-size: medium;
      border-top-left-radius: 0;
  }
  div.conv-form-wrapper div#messages div.message.from {
-     background: linear-gradient(to left, #38ff84 0%, #98fbbe 100%);
+     background: rgb(255, 255, 255);
+     font-family:'VT323', monospace;
      color: #000000;
+     font-size: medium;
      border-top-right-radius: 0;
  }
  .message.to+.message.from, .message.from+.message.to {
@@ -173,25 +177,25 @@
  }
  
  div.convFormDynamic button.submit {
-     padding: 3px;
+     padding: 1px;
      border: none;
-     float: left;
+     float: center;
      margin: 5px;
-     color: #06c5a6;
+     color: #03c8ff;
      cursor: pointer;
-     border-radius: 8px;
+     border-radius: 20px;
      font-size: 1.1rem;
      width: 36px;
      height: 35px;
      margin-top: 8px;
-     background: #fff;
+     background: rgb(255, 255, 255);
      outline: none !important;
  }
  
  
  div.convFormDynamic button.submit:hover {
      background: #06b79a;
-     color: #fff;
+     color: rgb(255, 255, 255);
  }
  
  button.submit.glow {
@@ -216,10 +220,10 @@
  
  
  .header-wrapper {
-   background-color: #000000;
-   color: white;
+   background-color: #ffffff;
+   color: rgb(255, 255, 255);
    width: auto;
-   height: 20px;
+   height: 15px;
    top: 0px;
    left: 0px;
    padding-left: 10px;
@@ -228,35 +232,34 @@
    padding-right: 20px;
    text-align: right;
  }
- /* .logo{
+ .logo{
      position: fixed;
      top: 0px;
-     left: 5%;
+     left: 0%;
      padding: 10px;
      padding-bottom: 20px;
- } */
+ }
  
  body {
      overflow: hidden;
-     background: #1a1a2e;
+     background: #000000;
  }
  
  
  .awesome {
  
-   font-family: futura;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
  
    width:100%;
-   margin-top: 12px;
-   margin-left: 12px;
+   margin-top: 5px;
+   margin-left: 10px;
    text-align: center;
  
-   color:#313131;
-   font-size:16px;
+   color:#03c8ff;
+   font-size: 30px;
    font-weight: bold;
    position: absolute;
-   -webkit-animation:colorchange 20s infinite alternate;
-   
+   /*-webkit-animation:colorchange 20s infinite alternate;*/
  
  
  }
@@ -314,5 +317,4 @@
    100% {
  
      color: #9ee84f;
-   }
- } */
+   } }*/
