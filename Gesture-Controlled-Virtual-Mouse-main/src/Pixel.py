@@ -12,7 +12,7 @@ from os import listdir
 from os.path import isfile, join
 import smtplib
 import wikipedia
-import Gesture_Controller
+#import Gesture_Controller
 #import Gesture_Controller_Gloved as Gesture_Controller
 import app
 from threading import Thread
@@ -52,7 +52,7 @@ def wish():
     else:
         reply("Good Evening!")  
         
-    reply("I am Proton, how may I help you?")
+    reply("I am Pixel, how can I help?")
 
 # Set Microphone parameters
 with sr.Microphone() as source:
@@ -69,9 +69,9 @@ def record_audio():
         try:
             voice_data = r.recognize_google(audio,language='en-US')
         except sr.RequestError as e:
-            print("Sorry my Service is down. Plz check your Internet connection; {0}".format(e))
+            print("Sorry my service is down. Plz check your Internet connection; {0}".format(e))
         except sr.UnknownValueError:
-            print('cant recognize')
+            print('Cant Recognize')
             pass
         return voice_data.lower()
 
@@ -80,7 +80,7 @@ def record_audio():
 def respond(voice_data):
     global file_exp_status, files, is_awake, path
     print(voice_data)
-    voice_data.replace('proton','')
+    voice_data.replace('pixel','')
     app.eel.addUserMsg(voice_data)
 
     if is_awake==False:
@@ -93,7 +93,7 @@ def respond(voice_data):
         wish()
 
     elif 'what is your name' in voice_data:
-        reply('My name is Proton!')
+        reply('My name is Pixel!')
 
     elif 'date' in voice_data:
         reply(today.strftime("%B %d, %Y"))
@@ -106,7 +106,7 @@ def respond(voice_data):
         url = 'https://google.com/search?q=' + voice_data.split('search')[1]
         try:
             webbrowser.get().open(url)
-            reply('This is what I found Sir')
+            reply('This is what I found')
         except:
             reply('Please check your Internet')
 
@@ -118,12 +118,12 @@ def respond(voice_data):
         url = 'https://google.nl/maps/place/' + temp_audio + '/&amp;'
         try:
             webbrowser.get().open(url)
-            reply('This is what I found Sir')
+            reply('This is what I found')
         except:
             reply('Please check your Internet')
 
     elif ('bye' in voice_data) or ('by' in voice_data):
-        reply("Good bye Sir! Have a nice day.")
+        reply("Good bye! Have a nice day.")
         is_awake = False
 
     elif ('exit' in voice_data) or ('terminate' in voice_data):
@@ -215,7 +215,7 @@ def respond(voice_data):
                 app.ChatBot.addAppMsg(filestr)
                    
     else: 
-        reply('I am not functioned to do this !')
+        reply('I am not functioning  to do this!')
 
 # ------------------Driver Code--------------------
 
@@ -237,7 +237,7 @@ while True:
         voice_data = record_audio()
 
     #process voice_data
-    if 'proton' in voice_data:
+    if 'pixel' in voice_data:
         try:
             #Handle sys.exit()
             respond(voice_data)
@@ -249,5 +249,4 @@ while True:
             print("EXCEPTION raised while closing.") 
             break
         
-
 
