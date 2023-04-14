@@ -135,7 +135,7 @@ def respond(voice_data):
         
     
     # DYNAMIC CONTROLS
-    elif 'launch gesture recognition' in voice_data:
+    elif 'launch gesture' in voice_data or 'launch gesture recognition' in voice_data:
         if Gesture_Controller.GestureController.gc_mode:
             reply('Gesture recognition is already active')
         else:
@@ -144,7 +144,7 @@ def respond(voice_data):
             t.start()
             reply('Launched Successfully')
 
-    elif ('stop gesture recognition' in voice_data) or ('top gesture recognition' in voice_data):
+    elif ('stop gesture' in voice_data) or ('top gesture recognition' in voice_data) or ('top gesture' in voice_data):
         if Gesture_Controller.GestureController.gc_mode:
             Gesture_Controller.GestureController.gc_mode = 0
             reply('Gesture recognition stopped')
